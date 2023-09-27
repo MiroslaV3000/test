@@ -8,9 +8,9 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace UnitTest1
+namespace VectorTest
 {
-	TEST_CLASS(UnitTest1)
+	TEST_CLASS(VectorTest)
 	{
 	public:
 		
