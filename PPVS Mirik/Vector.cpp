@@ -11,14 +11,14 @@ Vector::Vector(float x0, float y0, float z0, float x, float y, float z)
 	this->z = z;
 }
 
-void Vector::getEnd(float& x, float& y, float& z)
+void Vector::setEndToVars(float& x, float& y, float& z)
 {
 	x =this->x;
 	y = this->y;
 	z = this->z;
 }
 
-void Vector::getHome(float& x0, float& y0, float& z0)
+void Vector::setHomeToVars(float& x0, float& y0, float& z0)
 {
 	x0 = this->x0;
 	y0 = this->y0;
@@ -54,8 +54,8 @@ bool Vector::operator>=(Vector& other)
 
 Vector Vector::operator+(Vector& other)
 {
-	Vector c(this->x0 + other.x0, this->y0 + other.y0, this->z0 + other.z0, this->x + other.x, this->y + other.y, this->z + other.z);
-	return c;
+	Vector result(this->x0 + other.x0, this->y0 + other.y0, this->z0 + other.z0, this->x + other.x, this->y + other.y, this->z + other.z);
+	return result;
 }
 
 void Vector::operator+=(Vector& other)
@@ -70,8 +70,8 @@ void Vector::operator+=(Vector& other)
 
 Vector Vector::operator-(Vector& other)
 {
-	Vector c(this->x0-other.x0 , this->y0 - other.y0, this->z0 - other.z0, this->x - other.x, this->y- other.y, this->z - other.z);
-	return c;
+	Vector result(this->x0-other.x0 , this->y0 - other.y0, this->z0 - other.z0, this->x - other.x, this->y- other.y, this->z - other.z);
+	return result;
 }
 
 void Vector::operator-=(Vector& other)
@@ -89,18 +89,18 @@ float Vector::operator*(Vector& other)
 	return ((this->x - this->x0) * (other.x - other.x0) + (this->y - this->y0) * (other.y - other.y0) + (this->z - this->z) * (other.z - other.z0));
 }
 
-Vector Vector::operator*(float b)
+Vector Vector::operator*(float other)
 {
-	Vector c(this->x0, this->y0 , this->z0, this->x * b, this->y*b, this->z * b);
-	return c;
+	Vector result(this->x0, this->y0 , this->z0, this->x * other, this->y*other, this->z * other);
+	return result;
 }
 
-void Vector::operator*=(float b)
+void Vector::operator*=(float other)
 {
 	
-	this->x *= b;
-	this->y *= b;
-	this->z *= b;
+	this->x *= other;
+	this->y *= other;
+	this->z *= other;
 }
 
 float Vector::operator^(Vector& other)
